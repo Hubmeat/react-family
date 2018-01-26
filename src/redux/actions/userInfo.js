@@ -11,6 +11,7 @@ function getUserInfoRequest() {
     }
 }
 
+
 function getUserInfoSuccess(userInfo) {
     return {
         type: GET_USER_INFO_SUCCESS,
@@ -27,7 +28,7 @@ function getUserInfoFail() {
 export function getUserInfo () {
     return function (dispatch) {
         dispatch(getUserInfoRequest())
-        return axios.get('http://localhost:4100/assets/data.json')
+        return axios.get('http://localhost:4100/data.json')
                          .then( res => {
                             console.log('res', res)
                             setTimeout(() => {
