@@ -1,6 +1,9 @@
-export const GET_USER_INFO_REQUESTs = "userInfo/GET_USER_INFO_REQUEST";
+import axios from '../../axios/axios';
+
+export const GET_USER_INFO_REQUEST = "userInfo/GET_USER_INFO_REQUEST";
 export const GET_USER_INFO_SUCCESS = "userInfo/GET_USER_INFO_SUCCESS";
 export const GET_USER_INFO_FAIL = "userInfo/GET_USER_INFO_FAIL";
+
 
 function getUserInfoRequest() {
     return {
@@ -23,13 +26,17 @@ function getUserInfoFail() {
 
 export function getUserInfo () {
     return function (dispatch) {
-        dispatch(getUserInfoRequest)
-        return this.axios.get('../../assets/data.json')
+        dispatch(getUserInfoRequest())
+        return axios.get('http://localhost:4100/assets/data.json')
                          .then( res => {
-                             return res.json()
+                            console.log('res', res)
+                            setTimeout(() => {
+                                dispatch(getUserInfoSuccess(res.data))
+                            }, 2000);
                          })
                          .catch(err => {
-                             console.log('err', err)
+                            console.log('err', err)
+                            dispatch(getUserInfoFail())
                          })
     }
 }

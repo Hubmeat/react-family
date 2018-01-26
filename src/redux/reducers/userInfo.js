@@ -12,6 +12,7 @@ export default function reducer (state = initState, action) {
             return {
                 ...state,
                 isLoading: true,
+                hah: 'i am request sign',
                 userInfo: {},
                 errorMsg: ''
             };
@@ -19,6 +20,7 @@ export default function reducer (state = initState, action) {
             return {
                 ...state,
                 isLoading: false,
+                hah: 'i am success sign',
                 userInfo: action.userInfo,
                 errorMsg: ''
             };
@@ -26,6 +28,7 @@ export default function reducer (state = initState, action) {
             return {
                 ...state,
                 isLoading: false,
+                hah: 'i am error sign',
                 userInfo: {},
                 errorMsg: '请求出错'
             };
