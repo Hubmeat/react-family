@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'
 
 import Bundle from './Bundle';
 
@@ -14,6 +16,8 @@ const Loading = function () {
     return <div>loading.....</div>
 };
 
+const histroy = createBrowserHistory();
+
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
@@ -25,7 +29,7 @@ const createComponent = (component) => (props) => (
 
 
 const getRouter = () => (
-    <Router>
+    <Router histroy={histroy} basename='/dist' >
         <div>
             <ul>
                 <li><Link to="/">首页</Link></li>
