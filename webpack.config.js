@@ -1,3 +1,6 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const merge = require('webpack-merge');
 
 const webpack = require('webpack');
@@ -9,6 +12,18 @@ const commonConfig = require('./webpack.common.config.js');
 
 const publicConfig = {
     devtool: 'cheap-module-source-map',
+    entry: {
+        app: [
+            path.join(__dirname, 'src/index.js')
+        ],
+        vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
+    },
+    output: {
+        path: path.join(__dirname, './dist'),
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js',
+        publicPath: "./"
+    },
     module: {
         rules: [{
             test: /\.css$/,

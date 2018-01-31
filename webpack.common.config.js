@@ -3,18 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 commonConfig = {
-    entry: {
-        app: [
-            path.join(__dirname, 'src/index.js')
-        ],
-        vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
-    },
-    output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].[chunkhash].js',
-        chunkFilename: '[name].[chunkhash].js',
-        publicPath: "/"
-    },
+    // entry: {
+    //     app: [
+    //         path.join(__dirname, 'src/index.js')
+    //     ],
+    //     vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
+    // },
+    // output: {
+    //     path: path.join(__dirname, './dist'),
+    //     filename: '[name].[chunkhash].js',
+    //     chunkFilename: '[name].[chunkhash].js',
+    //     publicPath: "./"
+    // },
     module: {
         rules: [{
             test: /\.js$/,
@@ -46,7 +46,10 @@ commonConfig = {
 
     resolve: {
         alias: {
-
+            // components: path.join(__dirname, 'src/components'),
+            // router: path.join(__dirname, 'src/router'),
+            // actions: path.join(__dirname, 'src/redux/actions'),
+            // reducers: path.join(__dirname, 'src/redux/reducers')
         }
     }
 };

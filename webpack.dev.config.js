@@ -9,7 +9,8 @@ const devConfig = {
         app: [
             'react-hot-loader/patch',
             path.join(__dirname, 'src/index.js')
-        ]
+        ],
+        vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
     },
     output: {
         /*这里本来应该是[chunkhash]的，但是由于[chunkhash]和react-hot-loader不兼容。只能妥协*/
@@ -26,7 +27,7 @@ const devConfig = {
         port: 4100,
         contentBase: path.join(__dirname, './src/assets'),
         historyApiFallback: true,
-        host: '0.0.0.0',
+        host: '0.0.0.0'
     }
 };
 
