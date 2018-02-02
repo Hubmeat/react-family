@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import axios from './axios/axios';
 import {AppContainer} from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+
+// 引入ant-design样式
+// import 'antd/dist/antd.css';
 
 
 
 import getRouter from './router/router.js';
                                                  
 
-// React.prototype.axios = axios;
 
 
 /*初始化*/

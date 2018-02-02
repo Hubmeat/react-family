@@ -32,6 +32,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "antd": "^3.1.6",
     "axios": "^0.17.1",
     "fetch": "^1.1.0",
     "react": "^16.2.0",

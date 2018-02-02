@@ -6,10 +6,8 @@ import createBrowserHistory from 'history/createBrowserHistory';
  
 import Bundle from './Bundle';
 
-import Home from 'bundle-loader?lazy&name=home!../components/Home/Home';
-import Page1 from 'bundle-loader?lazy&name=Page1!../components/Page1/Page1';
-import Counter from 'bundle-loader?lazy&name=Counter!../components/Counter/Counter';
-import userInfo from 'bundle-loader?lazy&name=userInfo!../components/UserInfo/userInfo';
+
+import layout from 'bundle-loader?lazy&name=userInfo!../components/layout/layout';
 
 
 const Loading = function () {
@@ -27,24 +25,31 @@ const createComponent = (component) => (props) => (
 
 const histroy = createBrowserHistory();
 
-
 const getRouter = () => (
     // <Router histroy={histroy} basename='/dist'>
     <HashRouter>
         <div>
-            <ul>
+            {/* <ul>
                 <li><Link to="/">首页</Link></li>
                 <li><Link to="/page1">Page1</Link></li>
                 <li><Link to="/counter">counter</Link></li>
                 <li><Link to="/userinfo">UserInfo</Link></li>
-            </ul>
+                <li><Link to="/index">layout</Link></li>
+            </ul> */}
             <Switch>
-                <Route exact path="/" component={createComponent(Home)}/>
+                {/* <Route exact path="/" component={createComponent(Home)}/>
                 <Route path="/Page1" component={createComponent(Page1)}/>
                 <Route path="/counter" component={createComponent(Counter)}/>
-                <Route path="/userinfo" component={createComponent(userInfo)}/>
-                
+                <Route path="/userinfo" component={createComponent(userInfo)}/> */}
+                <Route path="/index" component={createComponent(layout)}/> 
             </Switch>
+            {/* <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/Page1" component={Page1}/>
+                <Route path="/counter" component={Counter}/>
+                <Route path="/userinfo" component={userInfo}/>
+                <Route path="/layout" component={layout}/>
+            </Switch> */}
         </div>
     </HashRouter>
 );
