@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import React, { Component } from 'react';
 
-import { changeSlide } from '../redux/actions/publicState';
+import { changeSlide } from '../../redux/actions/publicState';
 import { Layout, Menu, Icon, Avatar } from 'antd';
 const { Header, Sider, Content } = Layout;
 import './head.less';
@@ -15,19 +15,17 @@ class Head extends Component {
         // this.setState({
         // collapsed: !this.state.collapsed,
         // });
-        // this.props.changeSlide()
-        console.log('this.head.state', this.props)
+        this.props.change()
     };
     render () {
-        console.log('this.head.state', this.props)
-        const collapsed  = this.props.collapsed;
+        // const {collapsed}  = this.props.publicState.collapsed;
         return (
             <div id='head_con'> 
               <Header style={{ background: '#fff', padding: 0 }}>
                 <div className='head_left'>
                     <Icon
                     className="trigger"
-                    type={collapsed ? 'menu-unfold' : 'menu-fold'}
+                    type={ this.props.publicState.collapsed? 'menu-unfold' : 'menu-fold'}
                     onClick={this.toggle}
                     />
                 </div>
@@ -49,20 +47,19 @@ class Head extends Component {
 }
 
 const mapStateToPropss = (state) => {
-    console.log('heaed里面的state', state)
     return {
-        collapsed: state.publicState
+        publicState: state.publicState
     }
 };
 
 const mapDispatchToPropss = (dispatch) => {
     return {
-        CHANGE_SLIDE: () => {
+        change: () => {
             dispatch(changeSlide())
         }
     }
 };
 
-// export default connect(state => (collapsed: state.collapsed), dispatch => { dispatch(changeSlide()) } )(Head);
 
-export default connect(mapStateToPropss, mapDispatchToPropss)(Head);
+// export default connect(state => ({publicState: state.publicState}), dispatch =>  ( {changeWay: dispatch(changeSlide())} ) )(Head);
+export default connect( mapStateToPropss ,mapDispatchToPropss)(Head);

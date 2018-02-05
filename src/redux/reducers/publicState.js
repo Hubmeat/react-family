@@ -1,11 +1,11 @@
 import { CHANGE_SLIDE } from '../actions/publicState';
 
-const ss = {
-    collapsed: true
+const initState = {
+    test: 'nihao',
+    collapsed: false
 }
 
-export default function reducer ( state = ss, action ) {
-    console.log('reducer里面呢的state', state)
+export default function reducer ( state = initState, action ) {
     switch (action.type) {
         case CHANGE_SLIDE:
             return {
