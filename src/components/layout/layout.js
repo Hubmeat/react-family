@@ -6,8 +6,9 @@ const { SubMenu } = Menu;
 const { Header, Sider, Content } = Layout;
 import './layout.css';
 import ContentRoute from '../../router/contentsRoute';
+import Head from '../../publicCom/head';
 
-export default class Loyout extends Component {
+export default class LayoutCon extends Component {
     state = {
       collapsed: false,
     };
@@ -68,13 +69,7 @@ export default class Loyout extends Component {
               </Menu>
             </Sider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0 }}>
-                <Icon
-                  className="trigger"
-                  type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                  onClick={this.toggle}
-                />
-              </Header>
+              <Head />
               <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
                   <ContentRoute />
               </Content>

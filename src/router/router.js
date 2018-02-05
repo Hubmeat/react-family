@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import Bundle from './Bundle';
 
 
-import layout from 'bundle-loader?lazy&name=userInfo!../components/layout/layout';
+import LayoutCon from 'bundle-loader?lazy&name=userInfo!../components/layout/layout';
 
 
 const Loading = function () {
@@ -41,7 +41,7 @@ const getRouter = () => (
                 <Route path="/Page1" component={createComponent(Page1)}/>
                 <Route path="/counter" component={createComponent(Counter)}/>
                 <Route path="/userinfo" component={createComponent(userInfo)}/> */}
-                <Route path="/index" component={createComponent(layout)}/> 
+                <Route path="/index" component={createComponent(LayoutCon)}/> 
             </Switch>
             {/* <Switch>
                 <Route exact path="/" component={Home}/>
