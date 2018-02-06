@@ -8,6 +8,8 @@ import Bundle from './Bundle';
 
 
 import LayoutCon from 'bundle-loader?lazy&name=userInfo!../components/layout/layout';
+import LoginCon from 'bundle-loader?lazy&name=login!../components/Login/Login';
+import NotFound from 'bundle-loader?lazy&name=notFound!../components/NotFound/NotFound';
 
 
 const Loading = function () {
@@ -29,27 +31,13 @@ const getRouter = () => (
     // <Router histroy={histroy} basename='/dist'>
     <HashRouter>
         <div>
-            {/* <ul>
-                <li><Link to="/">首页</Link></li>
-                <li><Link to="/page1">Page1</Link></li>
-                <li><Link to="/counter">counter</Link></li>
-                <li><Link to="/userinfo">UserInfo</Link></li>
-                <li><Link to="/index">layout</Link></li>
-            </ul> */}
             <Switch>
-                {/* <Route exact path="/" component={createComponent(Home)}/>
-                <Route path="/Page1" component={createComponent(Page1)}/>
-                <Route path="/counter" component={createComponent(Counter)}/>
-                <Route path="/userinfo" component={createComponent(userInfo)}/> */}
+                <Route exact path="/" render={() => <Redirect to="/index" push />} /> 
                 <Route path="/index" component={createComponent(LayoutCon)}/> 
+                <Route path="/login" component={createComponent(LoginCon)}/> 
+                <Route path="/404" component={createComponent(NotFound)} />
+                <Route component={createComponent(NotFound)} />
             </Switch>
-            {/* <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/Page1" component={Page1}/>
-                <Route path="/counter" component={Counter}/>
-                <Route path="/userinfo" component={userInfo}/>
-                <Route path="/layout" component={layout}/>
-            </Switch> */}
         </div>
     </HashRouter>
 );

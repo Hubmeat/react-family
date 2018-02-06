@@ -38,6 +38,10 @@ class Head extends Component {
                         <li>
                             adminUser
                         </li>
+                        <li onClick={ () => {location.replace("#/login");}}>
+                            <Icon type="poweroff" />
+                            <span>退出</span>
+                        </li>
                     </ul>
                 </div>
               </Header>
