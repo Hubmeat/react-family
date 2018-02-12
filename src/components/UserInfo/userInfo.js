@@ -21,7 +21,7 @@ class UserInfo extends Component {
                     )
                 }
                 <button onClick={ () => this.props.getUserInfo()}>请求用户信息</button>
-                <img src = { notFoundImage } />
+                <img className='image' src = { notFoundImage } />
             </div>
         )
     }

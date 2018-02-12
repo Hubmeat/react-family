@@ -31,6 +31,16 @@ const publicConfig = {
                 fallback: "style-loader",
                 use: "css-loader"
             })
+        }, {
+            test: /\.less$/,
+            use: ExtractTextPlugin.extract({
+                use:[{
+                    loader:'css-loader'
+                },{
+                    loader:'less-loader'
+                }],
+                fallback:'style-loader'
+            })        
         }]
     },
     plugins: [

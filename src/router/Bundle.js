@@ -15,6 +15,14 @@ class Bundle extends Component {
             this.load(nextProps)
         }
     }
+    
+    // 组件将被卸载  
+    componentWillUnmount(){ 
+    //重写组件的setState方法，直接返回空
+        this.setState = (state,callback)=>{
+            return;
+        };  
+    }
 
     load(props) {
         this.setState({
