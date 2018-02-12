@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 // 引入ant-design样式
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 
 
 
