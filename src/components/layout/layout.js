@@ -37,7 +37,10 @@ class LayoutCon extends Component {
                 <Layout>
                     <Head />
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+                        
                         <ContentRoute />
+                        {/* {console.log('layout this', this.props)} */}
+                        {/* {this.props.children} */}
                     </Content>
                 </Layout>
             </Layout>

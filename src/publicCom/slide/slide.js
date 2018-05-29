@@ -37,7 +37,7 @@ class SlideCon extends Component {
                             <Link to="/index/">Home</Link>
                         </Menu.Item> */}
                         <Menu.Item key="event">
-                            <Link to="/index/event">事件案例分析</Link>
+                            <Link to="/index/event/overview">事件案例分析</Link>
                         </Menu.Item>
                         <Menu.Item key="page1">
                             <Link to="/index/page1">Page1</Link>
